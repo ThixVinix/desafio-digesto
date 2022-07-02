@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilização global do projeto */
+
+body {
+  background: rgb(146, 165, 245);
+  background: linear-gradient(
+    90deg,
+    rgba(146, 165, 245, 1) 0%,
+    rgba(106, 224, 249, 1) 15%,
+    rgba(178, 237, 250, 1) 50%,
+    rgba(106, 224, 249, 1) 85%,
+    rgba(146, 165, 245, 1) 100%
+  );
+}
