@@ -4,6 +4,7 @@ import { TopNavbarComponent } from './componentes/top-navbar/top-navbar.componen
 import { BottomNavbarComponent } from './componentes/bottom-navbar/bottom-navbar.component';
 import { TemplateBaseComponent } from './template-base/template-base.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class BaseModule { }
