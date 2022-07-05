@@ -1,0 +1,30 @@
+<ul class="pagination justify-content-center">
+    <li
+      class="page-item"
+      (click)="this.paginator.previousPage()"
+      [class.disabled]="this.paginator.pagination.page === 1"
+    >
+      <a class="page-link"><em class="bi bi-arrow-left"></em></a>
+    </li>
+  
+    <ng-container *ngFor="let item of paginator.buttonsToShow">
+      <li
+        class="page-item"
+        (click)="paginator.goTo(item)"
+        [class.active]="paginator.pagination.page === item"
+      >
+        <a class="page-link">{{ item }}</a>
+      </li>
+    </ng-container>
+  
+    <li
+      class="page-item"
+      (click)="paginator.nextPage()"
+      [class.disabled]="
+        this.paginator.pagination.page === this.paginator.pagination.totalPages
+      "
+    >
+      <a class="page-link"><em class="bi bi-arrow-right"></em></a>
+    </li>
+  </ul>
+  
