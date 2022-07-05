@@ -2,23 +2,26 @@
   class="row g-3"
   action=""
   method="POST"
-  (ngSubmit)="enviarCnj()"
+  [formGroup]="form"
+  (submit)="submitForm()"
 >
   <div class="col-12 col-md-12">
     <div class="row justify-content-center">
-      <label for="idCnj" class="form-label fs-3 col-auto">Digite o CNJ: </label>
+      <label for="cnj-input" class="form-label fs-3 col-auto">Digite o CNJ: </label>
     </div>
     <div class="row justify-content-center">
       <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
         <div class="input-group mb-3">
-          <input #inputCnj
-            [(ngModel)]="cnj"
-            (input)="checarPreenchimentoCnj($event)"
+          <input
+          #inputCnj
+          (input)="checarPreenchimentoCnj($event)"
+            cnj
             autofocus
             required="true"
             autocomplete="off"
-            id="idCnj"
+            id="cnj-input"
             name="cnj"
+            formControlName="cnj"
             type="text"
             maxlength="25"
             class="form-control shadow"
@@ -31,13 +34,14 @@
             class="btn btn-lg btn-dark bg-gradient shadow"
             type="submit"
             id="bt-pesquisar-cnj"
+            [disabled]="form.invalid"
           >
             <em class="bi bi-search me-2"></em>
             Pesquisar
           </button>
         </div>
-        <div *ngIf="isCnjValido == false" class="invalid-feedback text-center d-block">
-          {{ mensagemErro }}
+        <div *ngIf="hasCnjErrors()" class="invalid-feedback d-block">
+          {{ getCnjErrorMessage() }}
         </div>
       </div>
     </div>
