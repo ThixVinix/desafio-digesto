@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DigestoCnjComponent } from './digesto-cnj/digesto-cnj.component';
 
 import { registerLocaleData } from '@angular/common';
 import LOCALE_PT from '@angular/common/locales/pt';
