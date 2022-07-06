@@ -1,0 +1,85 @@
+<section class="my-5">
+    <div class="card text-center bg-light">
+      <h5 class="card-header">Detalhes do processo</h5>
+      <div class="card-body text-light bg-dark bg-gradient">
+        <h5 class="card-title">
+          {{ process.area }} / {{ process.instance }}ª instância
+        </h5>
+  
+        <button
+          href="#"
+          class="btn btn-outline-info bg-gradient"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Visualizar detalhes
+        </button>
+      </div>
+      <div class="card-footer text-muted">
+        {{ process.natureClass }}
+      </div>
+    </div>
+  
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Mais detalhes</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="card-text">{{ process.extraSubject }}</p>
+            <ul class="list-group">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                <strong class="mb-1 text-muted">Comarca</strong>
+                <span class="badge bg-info text-dark rounded-pill">{{
+                  process.judicialDistrict | titlecase
+                }}</span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                <strong class="mb-1 text-muted">Data de distribuição</strong>
+                <span class="badge bg-info text-dark rounded-pill">{{
+                  process.distributionDate | date: "dd/MM/yyyy"
+                }}</span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                <strong class="mb-1 text-muted">Valor da causa</strong>
+                <span class="badge bg-info text-dark rounded-pill">{{
+                  process.value | currency: "BRL"
+                }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
