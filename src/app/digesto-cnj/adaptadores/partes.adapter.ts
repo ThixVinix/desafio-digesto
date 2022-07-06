@@ -5,7 +5,7 @@ import { Partes } from '../tipos/partes.type';
 import { AdvogadoAdapter } from './advogado.adapter';
 
 @Injectable({ providedIn: 'root' })
-export class PartsAdapter implements Adapter<PartesInterface, Partes> {
+export class PartesAdapter implements Adapter<PartesInterface, Partes> {
   constructor(private lawerAdapter: AdvogadoAdapter) {}
 
   adapt(item: Partes): PartesInterface {
