@@ -1,0 +1,41 @@
+<section class="my-5">
+    <ng-container *ngIf="process$ | async as process">
+      <ng-container *ngIf="process.processId; else processNotFound">
+        <header>
+          <div class="d-flex justify-content-center">
+            <span class="badge bg-info text-light fs-2"
+              >{{ process.tribunal }} - Nº {{ process.number }}</span
+            >
+          </div>
+          <div class="d-flex justify-content-center">
+            <span class="fs-3">{{ process.forumCnj }}</span>
+          </div>
+        </header>
+  
+        <app-processos-detalhes [process]="process"></app-processos-detalhes>
+  
+        <app-lista-partes [parts]="process.parts"></app-lista-partes>
+  
+        <app-processos-relacionados
+          [relatedProcesses]="process.relatedProcesses"
+        ></app-processos-relacionados>
+  
+        <app-lista-movimentacoes [movements]="process.movements"></app-lista-movimentacoes>
+  
+        <app-lista-anexos
+          [attachments]="process.attachments"
+        ></app-lista-anexos>
+      </ng-container>
+    </ng-container>
+  </section>
+  
+  <ng-template #processNotFound>
+    <div class="row justify-content-center">
+    <div class="alert alert-info bg-gradient alert-dismissible fade show shadow-lg text-center col-auto"  role="alert">
+      <strong><em class="bi bi-emoji-frown-fill"></em> Processo não encontrado.</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+  
+  </ng-template>
+  
