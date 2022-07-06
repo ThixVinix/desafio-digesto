@@ -9,8 +9,8 @@ import { registerLocaleData } from '@angular/common';
 import LOCALE_PT from '@angular/common/locales/pt';
 import { BaseModule } from './base/base.module';
 
-import { ReactiveFormsModule } from '@angular/forms';
 import { DigestoCnjModule } from './digesto-cnj/digesto-cnj.module';
+import { CompartilhadoModule } from './compartilhado/compartilhado.module';
 
 registerLocaleData(LOCALE_PT);
 
@@ -19,10 +19,10 @@ registerLocaleData(LOCALE_PT);
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
+    CompartilhadoModule,
     BaseModule,
     DigestoCnjModule,
+    HttpClientModule,
   ],
   providers: [
     {

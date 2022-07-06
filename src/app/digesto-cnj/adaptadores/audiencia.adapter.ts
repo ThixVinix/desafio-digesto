@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Adapter } from '../interfaces/adapter.interface';
-import { AudienciaInterface } from '../interfaces/Audiencia.interface';
+import { AudienciaInterface } from '../interfaces/audiencia.interface';
 import { Audiencia } from '../tipos/audiencia.type';
 
 @Injectable({ providedIn: 'root' })

@@ -1,7 +1,7 @@
 import { Area } from '../tipos/area.type';
 import { ClasseNatureza } from '../tipos/classe-natureza.type';
 import { AnexoInterface } from './anexo.interface';
-import { AudienciaInterface } from './Audiencia.interface';
+import { AudienciaInterface } from './audiencia.interface';
 import { MovimentacaoInterface } from './movimentacao.interface';
 import { PartesInterface } from './partes.interface';
 import { ProcessoRelacionadoInterface } from './processos-relacionados.interface';
