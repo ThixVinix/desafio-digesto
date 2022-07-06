@@ -2,9 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
 
-> 🔸 `Configurando o projeto Front-End:`
+> 🔸 `Configurando o projeto:`
 
-1. Acesse a pasta do projeto front-end:
+1. Primeiramente, é necessário fazer o clone do projeto:
 
 ```sh
 git clone https://github.com/ThixVinix/desafio-digesto.git
