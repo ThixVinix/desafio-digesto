@@ -6,22 +6,33 @@
           <tr>
             <th scope="col" colspan="3">Tipo</th>
             <th scope="col" colspan="2">Data</th>
-            <th scope="col" colspan="7">Amostra</th>
+            <th scope="col" colspan="5">Amostra</th>
+            <th scope="col" colspan="2"></th>
           </tr>
         </thead>
         <tbody>
           <ng-container *ngFor="let item of paginator.paginatedList">
             <tr>
               <td colspan="3" class="text-truncate" style="max-width: 200px">
-                <a  [href]="item.downloadUrl" target="_blank">{{ item.title }}</a>
+                <a [href]="item.downloadUrl" target="_blank">{{ item.title }}</a>
               </td>
               <td colspan="2">
                 {{ item.obtainingDate | date: "dd/MM/yyyy" }}
               </td>
-              <td colspan="7" class="" style="max-width: 300px">
-               <div class="overflow-auto" style="max-height: 150px;">
+              <td colspan="5" class="text-truncate" style="max-width: 300px">
                 {{ item.textContent }}
-              </div>
+              </td>
+              <td colspan="2">
+                <button
+                  type="button"
+                  aria-expanded="false"
+                  data-bs-toggle="collapse"
+                  class="btn btn-link link-info"
+                  [attr.data-bs-target]="'#collapseAttachment' + item.id"
+                  [attr.aria-controls]="'collapseAttachment' + item.id"
+                >
+                  Amostra completa <em class="bi bi-chevron-down ms-2"></em>
+                </button>
               </td>
             </tr>
             <tr
