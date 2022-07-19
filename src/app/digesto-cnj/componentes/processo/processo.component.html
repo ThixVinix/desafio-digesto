@@ -10,6 +10,12 @@
           <div class="d-flex justify-content-center">
             <span class="fs-3">{{ process.forumCnj }}</span>
           </div>
+          <div class="d-flex justify-content-center">
+            <span class="font-monospace">
+              Atualizado em
+              {{ process.updateDate | date: "dd/MM/yyyy hh:mm" }}
+            </span>
+          </div>
         </header>
   
         <app-processos-detalhes [process]="process"></app-processos-detalhes>
